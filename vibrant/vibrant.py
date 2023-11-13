@@ -1,0 +1,9 @@
+class Vibrant:
+    def __init__(self) -> None:
+        ...
+
+    def _process():
+        ...
+
+    def get_palette():
+        ...
