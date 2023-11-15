@@ -1,6 +1,6 @@
 
 <p align="center">
-<img src="./docs/vibrant-logo.svg"/>
+<img src="https://github.com/totallynotadi/vibrant-python/raw/main/docs/vibrant-logo.svg"/>
 
 <div align="center">
 
@@ -29,7 +29,7 @@ The Python codebase is fully typed so great editor support is expected for intui
 
 ### Demo
 
-<img src="./docs/demo.png" width="480" align="right"/>
+<img src="https://github.com/totallynotadi/vibrant-python/raw/main/docs/demo.png" width="480" align="right"/>
 
 ```py
 from vibrant import Vibrant
