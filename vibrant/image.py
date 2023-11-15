@@ -74,7 +74,7 @@ class VibrantImage:
     ) -> List[Swatch]:
         swatches = []
         curr_idx = 0
-        for idx in range(0, self.props.color_count, 3):
+        for idx in range(0, len(raw_swatches), 3):
             swatches.append(
                 Swatch(
                     rgb=[
@@ -82,19 +82,17 @@ class VibrantImage:
                         raw_swatches[idx + 1],
                         raw_swatches[idx + 2],
                     ],
-                    population=swatch_populations[curr_idx][0]
-                    if curr_idx < len(swatch_populations)
-                    else 0,
+                    population=swatch_populations[curr_idx][0],
                 )
             )
             curr_idx += 1
-        swatches = list(filter(self._swatch_filter, swatches))
         return swatches
 
     def quantize(self) -> List[Swatch]:
         self.image = self.image.quantize(self.props.color_count)
         raw_swatches = self.image.getpalette()
-        swatch_populations = self.image.getcolors()
+        raw_swatches = list(filter(lambda x: x != 0, raw_swatches))
+        swatch_populations = self.image.getcolors(self.props.color_count)
         swatches = self._parse_swatches(
             raw_swatches=raw_swatches,
             swatch_populations=swatch_populations,
