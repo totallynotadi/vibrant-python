@@ -29,7 +29,7 @@ The Python codebase is fully typed so great editor support is expected for intui
 
 ### Demo
 
-<img src="./docs/demo.png" width="500" align="right"/>
+<img src="./docs/demo.png" width="484" align="right"/>
 
 ```py
 from vibrant import Vibrant
