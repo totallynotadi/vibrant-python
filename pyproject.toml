@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "vibrant-python"
+version = "0.1.1"
+description = "Extract color palettes from images in format similar to palettes module in Android."
+authors = ["totallynotadi <g.aditya2048@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "vibrant"}]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+Pillow = "^10.1.0"
+requests = "^2.31.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
