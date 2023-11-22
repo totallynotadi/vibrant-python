@@ -75,7 +75,7 @@ class VibrantImage:
         swatches = []
         curr_idx = 0
         for idx in range(0, len(raw_swatches), 3):
-            if idx + 2 <= len(raw_swatches):
+            if idx + 2 <= (len(raw_swatches) - 1):
                 swatches.append(
                     Swatch(
                         rgb=[

@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "vibrant-python"
-version = "0.1.5"
+version = "0.1.6"
 description = "Extract color palettes from images in format similar to palettes module in Android."
 authors = ["totallynotadi <g.aditya2048@gmail.com>"]
 license = "MIT"

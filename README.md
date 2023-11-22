@@ -21,7 +21,7 @@ python -m pip install vibrant-python
 - [X] Color palette extraction
 - [X] Fully typed codebase
 - [X] Color space conversion utilities
-- [ ] Contrast ration calculation
+- [ ] Contrast ratio calculation
 
 This library is a one-to-one port of the [node-vibrant](https://github.com/Vibrant-Colors/node-vibrant) package which itself is port of [Vibrant.js](https://github.com/jariz/vibrant.js). They all aim to produce color palette from images in format similar to the [Palette](https://developer.android.com/develop/ui/views/graphics/palette-colors#extract-color-profiles) module in Android. The primary use-case of this for me was to produce colors from album cover arts (simply extracting the most prominent colors isn't always the best fit in most cases and requires a more sophisticated solution) where such color palettes work well.
 
