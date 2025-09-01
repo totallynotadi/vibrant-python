@@ -79,8 +79,6 @@ class VibrantImage:
                 raw_swatches[start_idx + 1],
                 raw_swatches[start_idx + 2],
             ]
-            if not any(rgb):
-                continue
 
             swatches.append(Swatch(rgb=rgb, population=population))
         return swatches
