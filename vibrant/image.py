@@ -60,8 +60,7 @@ class VibrantImage:
     def from_fp(cls, fp: io.BufferedReader) -> "VibrantImage":
         return cls(Image.open(fp))
 
-    def scale_down(self):
-        ...
+    def scale_down(self): ...
 
     def _swatch_filter(self, swatch: List[int]) -> bool:
         r, g, b = swatch.rgb
@@ -73,26 +72,20 @@ class VibrantImage:
         swatch_populations: List[Tuple[int, int]],
     ) -> List[Swatch]:
         swatches = []
-        curr_idx = 0
-        for idx in range(0, len(raw_swatches), 3):
-            if idx + 2 <= (len(raw_swatches) - 1):
-                swatches.append(
-                    Swatch(
-                        rgb=[
-                            raw_swatches[idx],
-                            raw_swatches[idx + 1],
-                            raw_swatches[idx + 2],
-                        ],
-                        population=swatch_populations[curr_idx][0],
-                    )
-                )
-                curr_idx += 1
+        for population, palette_idx in swatch_populations:
+            start_idx = palette_idx * 3
+            rgb = [
+                raw_swatches[start_idx],
+                raw_swatches[start_idx + 1],
+                raw_swatches[start_idx + 2],
+            ]
+
+            swatches.append(Swatch(rgb=rgb, population=population))
         return swatches
 
     def quantize(self) -> List[Swatch]:
         self.image = self.image.quantize(self.props.color_count)
         raw_swatches = self.image.getpalette()
-        raw_swatches = list(filter(lambda x: x != 0, raw_swatches))
         swatch_populations = self.image.getcolors(self.props.color_count)
         swatches = self._parse_swatches(
             raw_swatches=raw_swatches,
